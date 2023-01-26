@@ -24,12 +24,11 @@ while click < 2:
     mouse.click(Mouse.LEFT_BUTTON)
     time.sleep(0.5)
     i = 1000
-    while i <= 9999:
-        key = i
-        pin =str(key)
-        keyboard_layout.write(pin)
-        time.sleep(1.5)
-        i += 1
-        click = click+1
+    with open("list.txt", "r") as f:
+        for key in f.readlines:
+            pin =str(key.split('\n'))
+            keyboard_layout.write(pin)
+            time.sleep(0.01)
+            click = click+1
 
 led.value=False
